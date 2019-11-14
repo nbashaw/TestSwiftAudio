@@ -13,6 +13,8 @@
 		D17DB7BB237D3388002A9A07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D17DB7BA237D3388002A9A07 /* Assets.xcassets */; };
 		D17DB7BE237D3388002A9A07 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D17DB7BD237D3388002A9A07 /* Preview Assets.xcassets */; };
 		D17DB7C1237D3388002A9A07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D17DB7BF237D3388002A9A07 /* LaunchScreen.storyboard */; };
+		D17DB7C9237D34C9002A9A07 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17DB7C8237D34C9002A9A07 /* AudioPlayer.swift */; };
+		D17DB7CC237D3726002A9A07 /* SwiftAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D17DB7CB237D3726002A9A07 /* SwiftAudio.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		D17DB7BD237D3388002A9A07 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D17DB7C0237D3388002A9A07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D17DB7C2237D3388002A9A07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D17DB7C8237D34C9002A9A07 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		D17DB7CB237D3726002A9A07 /* SwiftAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftAudio.framework; path = Carthage/Build/iOS/SwiftAudio.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D17DB7CC237D3726002A9A07 /* SwiftAudio.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,7 @@
 			children = (
 				D17DB7B3237D3380002A9A07 /* TestSwiftAudio */,
 				D17DB7B2237D3380002A9A07 /* Products */,
+				D17DB7CA237D3726002A9A07 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,9 +62,9 @@
 		D17DB7B3237D3380002A9A07 /* TestSwiftAudio */ = {
 			isa = PBXGroup;
 			children = (
+				D17DB7CE237D3AEA002A9A07 /* Main */,
 				D17DB7B4237D3380002A9A07 /* AppDelegate.swift */,
 				D17DB7B6237D3380002A9A07 /* SceneDelegate.swift */,
-				D17DB7B8237D3380002A9A07 /* ContentView.swift */,
 				D17DB7BA237D3388002A9A07 /* Assets.xcassets */,
 				D17DB7BF237D3388002A9A07 /* LaunchScreen.storyboard */,
 				D17DB7C2237D3388002A9A07 /* Info.plist */,
@@ -75,6 +81,23 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		D17DB7CA237D3726002A9A07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D17DB7CB237D3726002A9A07 /* SwiftAudio.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D17DB7CE237D3AEA002A9A07 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D17DB7B8237D3380002A9A07 /* ContentView.swift */,
+				D17DB7C8237D34C9002A9A07 /* AudioPlayer.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -85,6 +108,7 @@
 				D17DB7AD237D3380002A9A07 /* Sources */,
 				D17DB7AE237D3380002A9A07 /* Frameworks */,
 				D17DB7AF237D3380002A9A07 /* Resources */,
+				D17DB7CD237D3740002A9A07 /* Carthage stuff */,
 			);
 			buildRules = (
 			);
@@ -141,6 +165,29 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D17DB7CD237D3740002A9A07 /* Carthage stuff */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftAudio.framework",
+			);
+			name = "Carthage stuff";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SwiftAudio.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D17DB7AD237D3380002A9A07 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -149,6 +196,7 @@
 				D17DB7B5237D3380002A9A07 /* AppDelegate.swift in Sources */,
 				D17DB7B7237D3380002A9A07 /* SceneDelegate.swift in Sources */,
 				D17DB7B9237D3380002A9A07 /* ContentView.swift in Sources */,
+				D17DB7C9237D34C9002A9A07 /* AudioPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +336,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"TestSwiftAudio/Preview Content\"";
 				DEVELOPMENT_TEAM = Q72K2TBX9J;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TestSwiftAudio/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -308,6 +360,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"TestSwiftAudio/Preview Content\"";
 				DEVELOPMENT_TEAM = Q72K2TBX9J;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TestSwiftAudio/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
